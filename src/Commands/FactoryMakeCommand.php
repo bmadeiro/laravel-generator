@@ -48,7 +48,7 @@ class FactoryMakeCommand extends GeneratorCommand
     {
         parent::handle();
 
-        $this->comment('\nGenerating factory for : '. implode(',', $this->tables));
+        $this->comment("\nGenerating factory for : ". implode(',', $this->tables));
 
         if ($this->option('models')) {
             $this->models = explode(',', $this->option('models'));

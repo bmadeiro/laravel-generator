@@ -224,7 +224,7 @@ class ModelRelationshipsGenerator
 
             $hasOneFunctionName = $this->getSingularFunctionName($rules[0]);
 
-            $function  = "\n\npublic function $hasOneFunctionName() {";
+            $function  = "\n\tpublic function $hasOneFunctionName() {";
             $function .= "\n\t\treturn \$this->hasOne('$hasOneModel', '$key1', '$key2');";
             $function .= "\n\t}";
 
@@ -245,7 +245,7 @@ class ModelRelationshipsGenerator
 
             $belongsToFunctionName = $this->getSingularFunctionName($rules[0]);
 
-            $function  = "\n\npublic function $belongsToFunctionName() {";
+            $function  = "\n\tpublic function $belongsToFunctionName() {";
             $function .= "\n\t\treturn \$this->belongsTo('$belongsToModel', '$key1', '$key2');";
             $function .= "\n\t}";
 
@@ -266,7 +266,7 @@ class ModelRelationshipsGenerator
 
             $hasManyFunctionName = $this->getPluralFunctionName($rules[0]);
 
-            $function  = "\n\npublic function $hasManyFunctionName() {";
+            $function  = "\n\tpublic function $hasManyFunctionName() {";
             $function .= "\n\t\treturn \$this->hasMany('$hasManyModel', '$key1', '$key2');";
             $function .= "\n\t}";
 
@@ -288,7 +288,7 @@ class ModelRelationshipsGenerator
 
             $belongsToManyFunctionName = $this->getPluralFunctionName($rules[0]);
 
-            $function  = "\n\npublic function $belongsToManyFunctionName() {";
+            $function  = "\n\tpublic function $belongsToManyFunctionName() {";
             $function .= "\n\t\treturn \$this->belongsToMany('$belongsToManyModel', '$through', '$key1', '$key2');";
             $function .= "\n\t}";
 

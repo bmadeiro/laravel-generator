@@ -46,7 +46,7 @@ class FactoryGenerator extends BaseGenerator implements GeneratorInterface
 
         $factoryContent = "\n\n".$this->generateContent($this->templatePath, $templateData);
 
-        $this->command->info("\nUpdate factory for tables :".$data['TABLE_NAME']);
+        $this->command->info("\nUpdate factory for tables :".$data['TABLE_NAME'] . "\n\n");
 
         $this->fileHelper->append($this->rootPath, $factoryContent);
     }
