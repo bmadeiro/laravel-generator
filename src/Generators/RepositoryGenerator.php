@@ -66,6 +66,6 @@ class RepositoryGenerator extends BaseGenerator implements GeneratorInterface
             return;
         }
 
-        $this->command->callSilent('generator:publish', ['--baseRepository' => true]);
+        //$this->command->callSilent('generator:publish', ['--baseRepository' => true]);
     }
 }
