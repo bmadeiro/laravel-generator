@@ -1,4 +1,6 @@
-<?php namespace Bluecode\Generator\Parser;
+<?php 
+
+namespace Bluecode\Generator\Parser;
 
 class ForeignKeyParser
 {

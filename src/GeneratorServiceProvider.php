@@ -1,4 +1,6 @@
-<?php namespace Bluecode\Generator;
+<?php 
+
+namespace Bluecode\Generator;
 
 use Illuminate\Support\ServiceProvider;
 

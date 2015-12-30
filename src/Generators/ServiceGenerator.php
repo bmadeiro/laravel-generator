@@ -1,4 +1,6 @@
-<?php namespace Bluecode\Generator\Generators;
+<?php 
+
+namespace Bluecode\Generator\Generators;
 
 class ServiceGenerator extends BaseGenerator implements GeneratorInterface
 {

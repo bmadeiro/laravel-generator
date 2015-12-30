@@ -1,4 +1,6 @@
-<?php namespace Bluecode\Generator\Generators;
+<?php 
+
+namespace Bluecode\Generator\Generators;
 
 use Bluecode\Generator\Parser\SchemaParser;
 

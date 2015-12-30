@@ -1,8 +1,10 @@
-<?php namespace Bluecode\Generator\Commands;
+<?php 
 
+namespace Bluecode\Generator\Commands;
+
+use DB;
 use Illuminate\Console\Command;
 use Bluecode\Generator\CommandData;
-use DB;
 
 abstract class GeneratorCommand extends Command
 {

@@ -1,9 +1,11 @@
-<?php namespace Bluecode\Generator\Generators;
+<?php 
+
+namespace Bluecode\Generator\Generators;
 
 use Bluecode\Generator\Syntax\AddToTable;
+use Bluecode\Generator\Parser\SchemaParser;
 use Bluecode\Generator\Syntax\AddForeignKeysToTable;
 use Bluecode\Generator\Syntax\RemoveForeignKeysFromTable;
-use Bluecode\Generator\Parser\SchemaParser;
 
 class MigrationGenerator extends BaseGenerator implements GeneratorInterface
 {

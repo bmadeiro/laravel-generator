@@ -1,4 +1,6 @@
-<?php namespace Bluecode\Generator\Generators;
+<?php 
+
+namespace Bluecode\Generator\Generators;
 
 class ViewGenerator extends BaseGenerator implements GeneratorInterface
 {

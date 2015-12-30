@@ -1,7 +1,9 @@
-<?php namespace Bluecode\Generator\Generators;
+<?php 
 
-use Bluecode\Generator\Parser\SchemaParser;
+namespace Bluecode\Generator\Generators;
+
 use Faker\Factory;
+use Bluecode\Generator\Parser\SchemaParser;
 
 class FactoryGenerator extends BaseGenerator implements GeneratorInterface
 {

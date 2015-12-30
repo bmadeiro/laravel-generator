@@ -1,13 +1,15 @@
-<?php namespace $NAMESPACE_CONTROLLER$;
+<?php 
+
+namespace $NAMESPACE_CONTROLLER$;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
+use Flash;
 use $NAMESPACE_REQUEST$;
+use $NAMESPACE_MODEL$\$MODEL_NAME$;
 use $NAMESPACE_REQUEST$\Create$MODEL_NAME$Request;
 use $NAMESPACE_REQUEST$\Update$MODEL_NAME$Request;
 use $BASE_CONTROLLER$ as BaseController;
-use $NAMESPACE_MODEL$\$MODEL_NAME$;
-use Flash;
 
 class $MODEL_NAME$Controller extends BaseController
 {

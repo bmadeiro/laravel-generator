@@ -1,4 +1,6 @@
-<?php namespace Bluecode\Generator\Commands;
+<?php 
+
+namespace Bluecode\Generator\Commands;
 
 use Bluecode\Generator\Generators\FactoryGenerator;
 

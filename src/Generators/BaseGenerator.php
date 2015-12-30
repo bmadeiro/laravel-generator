@@ -1,7 +1,9 @@
-<?php namespace Bluecode\Generator\Generators;
+<?php 
 
-use Illuminate\Filesystem\Filesystem;
+namespace Bluecode\Generator\Generators;
+
 use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
 use Bluecode\Generator\Parser\SchemaParser;
 
 class BaseGenerator

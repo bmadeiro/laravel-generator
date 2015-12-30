@@ -1,6 +1,8 @@
-<?php namespace $NAMESPACE_REQUEST$;
+<?php 
 
-use App\Http\Requests\Request;
+namespace $NAMESPACE_REQUEST$;
+
+use App\Base\Request;
 use $NAMESPACE_MODEL$\$MODEL_NAME$;
 
 class Update$MODEL_NAME$Request extends Request {

@@ -1,13 +1,15 @@
-<?php namespace Bluecode\Generator\Commands;
+<?php 
 
-use Bluecode\Generator\Generators\MigrationGenerator;
-use Bluecode\Generator\Generators\RoutesGenerator;
-use Bluecode\Generator\Generators\RequestGenerator;
-use Bluecode\Generator\Generators\ModelGenerator;
-use Bluecode\Generator\Generators\RepositoryGenerator;
-use Bluecode\Generator\Generators\ServiceGenerator;
-use Bluecode\Generator\Generators\ControllerGenerator;
+namespace Bluecode\Generator\Commands;
+
 use Bluecode\Generator\Generators\ViewGenerator;
+use Bluecode\Generator\Generators\ModelGenerator;
+use Bluecode\Generator\Generators\RoutesGenerator;
+use Bluecode\Generator\Generators\ServiceGenerator;
+use Bluecode\Generator\Generators\RequestGenerator;
+use Bluecode\Generator\Generators\MigrationGenerator;
+use Bluecode\Generator\Generators\RepositoryGenerator;
+use Bluecode\Generator\Generators\ControllerGenerator;
 
 class ScaffoldMakeCommand extends GeneratorCommand
 {
