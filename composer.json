@@ -1,5 +1,5 @@
 {
-    "name": "bluecode/laravel-generator",
+    "name": "19peaches/laravel-generator",
     "description": "Laravel CRUD Generator/Model/Migrate from just one command with including Controller, Service, Repository, Model, Migrations, routes.php update.",
     "keywords": [
         "laravel",
@@ -22,7 +22,6 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
             "Bluecode\\Generator\\": "src"
         }
     },
