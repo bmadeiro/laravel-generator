@@ -1,9 +1,9 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Generators;
+namespace Peaches\Generator\Generators;
 
 use Faker\Factory;
-use Bluecode\Generator\Parser\SchemaParser;
+use Peaches\Generator\Parser\SchemaParser;
 
 class FactoryGenerator extends BaseGenerator implements GeneratorInterface
 {
@@ -44,9 +44,9 @@ class FactoryGenerator extends BaseGenerator implements GeneratorInterface
     {
         $templateData = $this->getTemplateData($data);
 
-        $factoryContent = "\n\n".$this->generateContent($this->templatePath, $templateData);
+        $factoryContent = "\n\n" . $this->generateContent($this->templatePath, $templateData);
 
-        $this->command->info("\nUpdate factory for tables :".$data['TABLE_NAME'] . "\n\n");
+        $this->command->info("\nUpdate factory for tables :" . $data['TABLE_NAME'] . "\n\n");
 
         $this->fileHelper->append($this->rootPath, $factoryContent);
     }
@@ -72,7 +72,7 @@ class FactoryGenerator extends BaseGenerator implements GeneratorInterface
                 } else {
                     $faker->getFormatter($column['field']);
 
-                    $func = '$faker->'.$column['field'];
+                    $func = '$faker->' . $column['field'];
                 }
             } catch (\Exception $e) {
                 logger($column['type']);
@@ -101,10 +101,10 @@ class FactoryGenerator extends BaseGenerator implements GeneratorInterface
                         break;
                     case 'text':
                     case 'boolean':
-                        $func = '$faker->'.$column['type'].'()';
+                        $func = '$faker->' . $column['type'] . '()';
                         break;
                     case 'date':
-                        $func = '$faker->'.'dateTimeBetween()';
+                        $func = '$faker->' . 'dateTimeBetween()';
                         break;
                     default:
                         $func = '';
@@ -112,9 +112,9 @@ class FactoryGenerator extends BaseGenerator implements GeneratorInterface
             }
 
             if (!empty($func)) {
-                $fieldStr[] = "'".$column['field']."' => ".$func;
+                $fieldStr[] = "'" . $column['field'] . "' => " . $func;
             }
-            
+
         }
         $data['FIELDS'] = implode(",\n\t\t", $fieldStr);
 

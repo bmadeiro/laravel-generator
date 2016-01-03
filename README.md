@@ -1,4 +1,4 @@
-Laravel Resource Generator (Laravel5.1)
+Laravel Resource Generator (Laravel 5.2)
 ======================= 
 
 The artisan command can generate the following items:
@@ -18,7 +18,7 @@ The artisan command can generate the following items:
 
 Here is the full documentation.
 
-[Upgrade Guide](https://github.com/matmaxanh/laravel-generator/blob/master/Upgrade_Guide.md).
+[Upgrade Guide](https://github.com/19peaches/laravel-generator/blob/master/Upgrade_Guide.md).
 
 # Documentation is in process...
 
@@ -42,8 +42,11 @@ Documentation
         "require": {
             "doctrine/dbal": "^2.5",
             "laracasts/flash": "dev-master",
-            "laravelcollective/html": "5.1.*@dev",
-            "bluecode/laravel-generator": "dev-master"
+            "laravelcollective/html": "^5.2"
+        }
+
+        "require-dev": {
+            "peaches/laravel-generator": "1.*"
         }
   
 2. Run composer update
@@ -56,7 +59,7 @@ Documentation
 
 		Collective\Html\HtmlServiceProvider::class,
 		Laracasts\Flash\FlashServiceProvider::class,
-		Bluecode\Generator\GeneratorServiceProvider::class,
+		Peaches\Generator\GeneratorServiceProvider::class,
         
    Also for convenience, add these facades in alias array in ```config/app.php```.
 
@@ -73,6 +76,7 @@ Publish Configuration file ```generator.php```.
 Config file (```config/generator.php```) contains path for all generated files
 
 ```base_controller``` - Base Controller for all Controllers<br>
+```base_name``` - Base directory path for base classes.<br>
 
 ```path_migration``` - Path where Migration file to be generated<br>
 ```path_model``` - Path where Model file to be generated<br>
@@ -196,6 +200,6 @@ To use Auth trait, use auth option,
 Credits
 --------
 
-This Laravel Generator is created by [Bluecode](https://github.com/matmaxanh).
+Original Laravel Generator is created by [Bluecode](https://github.com/matmaxanh).
 
-**Bugs & Forks are welcomed :)**
+**Bugs are welcomed :)**

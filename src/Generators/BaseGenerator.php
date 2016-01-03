@@ -1,10 +1,10 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Generators;
+namespace Peaches\Generator\Generators;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Bluecode\Generator\Parser\SchemaParser;
+use Peaches\Generator\Parser\SchemaParser;
 
 class BaseGenerator
 {
@@ -25,7 +25,7 @@ class BaseGenerator
     /**
      * The parser class.
      *
-     * @var \Bluecode\Generator\Parser\SchemaParser
+     * @var \Peaches\Generator\Parser\SchemaParser
      */
     public $schemaParser;
 
@@ -78,7 +78,7 @@ class BaseGenerator
         $this->templatePath = $this->getTemplatePath();
         $this->type = $this->getType();
 
-        $this->rootPath = config('generator.path_'.$this->type);
+        $this->rootPath = config('generator.path_' . $this->type);
     }
 
     /**
@@ -100,7 +100,7 @@ class BaseGenerator
     {
         $this->makeDirectory($this->rootPath);
 
-        $path = $this->rootPath.$filename;
+        $path = $this->rootPath . $filename;
 
         if (is_null($templatePath)) {
             $templatePath = $this->templatePath;
@@ -109,7 +109,7 @@ class BaseGenerator
 
         $this->fileHelper->put($path, $content);
 
-        $this->command->info($filename.' created successfully.');
+        $this->command->info($filename . ' created successfully.');
     }
 
     /**
@@ -120,7 +120,7 @@ class BaseGenerator
      */
     protected function makeDirectory($path)
     {
-        if (! $this->fileHelper->exists($path)) {
+        if (!$this->fileHelper->exists($path)) {
             $this->fileHelper->makeDirectory($path, 0777, true, true);
         }
     }
@@ -148,10 +148,10 @@ class BaseGenerator
      */
     protected function getTemplate($templatePath)
     {
-        $path = base_path('resources/generator-templates/'.$templatePath.'.stub');
+        $path = base_path('resources/generator-templates/' . $templatePath . '.stub');
 
         if (!file_exists($path)) {
-            $path = __DIR__.'/../../templates/'.$templatePath.'.stub';
+            $path = __DIR__ . '/../../templates/' . $templatePath . '.stub';
         }
 
         return $this->fileHelper->get($path);

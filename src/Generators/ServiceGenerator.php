@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Generators;
+namespace Peaches\Generator\Generators;
 
 class ServiceGenerator extends BaseGenerator implements GeneratorInterface
 {
@@ -26,7 +26,7 @@ class ServiceGenerator extends BaseGenerator implements GeneratorInterface
 
     public function generate($data = [])
     {
-        $filename = $data['MODEL_NAME'].'Service.php';
+        $filename = $data['MODEL_NAME'] . 'Service.php';
 
         $this->generateFile($filename, $data);
     }

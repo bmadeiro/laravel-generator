@@ -1,8 +1,8 @@
 <?php 
 
-namespace Bluecode\Generator\Generators;
+namespace Peaches\Generator\Generators;
 
-use Bluecode\Generator\Parser\SchemaParser;
+use Peaches\Generator\Parser\SchemaParser;
 
 class ModelGenerator extends BaseGenerator implements GeneratorInterface
 {

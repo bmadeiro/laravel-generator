@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Commands;
+namespace Peaches\Generator\Commands;
 
 use Illuminate\Console\Command;
 
@@ -31,7 +31,7 @@ class ResourceMakeCommand extends Command
     public function handle()
     {
         $params = [
-            'tables'   => $this->argument('tables'),
+            'tables' => $this->argument('tables'),
             '--tables' => $this->option('tables'),
             '--ignore' => $this->option('ignore'),
         ];

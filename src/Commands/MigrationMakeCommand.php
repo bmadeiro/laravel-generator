@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Commands;
+namespace Peaches\Generator\Commands;
 
-use Bluecode\Generator\Generators\MigrationGenerator;
+use Peaches\Generator\Generators\MigrationGenerator;
 
 class MigrationMakeCommand extends GeneratorCommand
 {
@@ -42,7 +42,7 @@ class MigrationMakeCommand extends GeneratorCommand
     {
         parent::handle();
 
-        $this->comment('Generating migrations for: '. implode(', ', $this->tables));
+        $this->comment('Generating migrations for: ' . implode(', ', $this->tables));
 
         $migrationGenerator = new MigrationGenerator($this);
         $migrationGenerator->generate();

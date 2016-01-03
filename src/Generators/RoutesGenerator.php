@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Generators;
+namespace Peaches\Generator\Generators;
 
 class RoutesGenerator extends BaseGenerator implements GeneratorInterface
 {
@@ -27,9 +27,9 @@ class RoutesGenerator extends BaseGenerator implements GeneratorInterface
     public function generate($data = [])
     {
         $data['RESOURCE_URL'] = str_slug($data['TABLE_NAME']);
-        $routeContent = "\n\n".$this->generateContent($this->templatePath, $data);
+        $routeContent = "\n\n" . $this->generateContent($this->templatePath, $data);
 
-        $this->command->info("\nUpdate route for resources:".$data['TABLE_NAME']);
+        $this->command->info("\nUpdate route for resources:" . $data['TABLE_NAME']);
 
         $this->fileHelper->append($this->rootPath, $routeContent);
     }

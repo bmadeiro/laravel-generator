@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Parser;
+namespace Peaches\Generator\Parser;
 
 class IndexParser
 {
@@ -31,13 +31,12 @@ class IndexParser
             $indexArray = $this->indexToArray($table, $index);
             if (count($indexArray['columns']) == 1) {
                 $columnName = $indexArray['columns'][0];
-                $this->indexes[ $columnName ] = (object) $indexArray;
+                $this->indexes[$columnName] = (object) $indexArray;
             } else {
                 $this->multiFieldIndexes[] = (object) $indexArray;
             }
         }
     }
-
 
     /**
      * @param string $table
@@ -69,13 +68,13 @@ class IndexParser
      */
     protected function getDefaultIndexName($table, $type, $columns)
     {
-        if ($type=='primary') {
+        if ($type == 'primary') {
             return 'PRIMARY';
         }
         if (is_array($columns)) {
             $columns = implode('_', $columns);
         }
-        return $table .'_'. $columns .'_'. $type;
+        return $table . '_' . $columns . '_' . $type;
     }
 
     /**
@@ -90,15 +89,14 @@ class IndexParser
         return $name == $this->getDefaultIndexName($table, $type, $columns);
     }
 
-
     /**
      * @param string $name
      * @return null|object
      */
     public function getIndex($name)
     {
-        if (isset($this->indexes[ $name ])) {
-            return (object) $this->indexes[ $name ];
+        if (isset($this->indexes[$name])) {
+            return (object) $this->indexes[$name];
         }
         return null;
     }

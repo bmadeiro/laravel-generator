@@ -11,14 +11,14 @@ Upgrade Guide from 1.0 to 1.x
 3. Change version in composer.json
 
         "require": {
-            "bluecode/laravel-generator": "1.0"
+            "Peaches/laravel-generator": "1.0"
         }
 
 4. Run composer update.
 
 5. Run publish command again.
 
-        php artisan vendor:publish --provider="Bluecode\Generator\GeneratorServiceProvider"
+        php artisan vendor:publish --provider="Peaches\Generator\GeneratorServiceProvider"
 
 6. Replace your custom paths again in ```config/generator.php```.
 

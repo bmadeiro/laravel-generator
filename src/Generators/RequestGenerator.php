@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Generators;
+namespace Peaches\Generator\Generators;
 
 class RequestGenerator extends BaseGenerator implements GeneratorInterface
 {
@@ -28,12 +28,12 @@ class RequestGenerator extends BaseGenerator implements GeneratorInterface
     {
         // create request
         $this->setTemplatePath('scaffold/requests/CreateRequest');
-        $filename = 'Create'.$data['MODEL_NAME'].'Request.php';
+        $filename = 'Create' . $data['MODEL_NAME'] . 'Request.php';
         $this->generateFile($filename, $data);
 
         // update request
         $this->setTemplatePath('scaffold/requests/UpdateRequest');
-        $filename = 'Update'.$data['MODEL_NAME'].'Request.php';
+        $filename = 'Update' . $data['MODEL_NAME'] . 'Request.php';
         $this->generateFile($filename, $data);
     }
 }

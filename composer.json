@@ -1,18 +1,14 @@
 {
     "name": "19peaches/laravel-generator",
     "description": "Laravel CRUD Generator/Model/Migrate from just one command with including Controller, Service, Repository, Model, Migrations, routes.php update.",
-    "keywords": [
-        "laravel",
-        "model",
-        "migration",
-        "scaffold",
-        "CRUD",
-        "generator"
-    ],
+    "keywords": ["dais", "laravel", "model", "migration", "scaffold", "CRUD", "generator"],
     "license": "MIT",
     "authors": [
         {
             "name": "Bluecode"
+        },
+        {
+            "name": "Vince Kronlein"
         }
     ],
     "require": {
@@ -22,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Bluecode\\Generator\\": "src"
+            "Peaches\\Generator\\": "src"
         }
     },
     "suggest": {

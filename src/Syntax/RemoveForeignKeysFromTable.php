@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Syntax;
+namespace Peaches\Generator\Syntax;
 
 /**
  * Class RemoveForeignKeysFromTable
@@ -28,7 +28,7 @@ class RemoveForeignKeysFromTable extends Table
      */
     protected function createIndexName($column)
     {
-        $index = strtolower($this->table.'_'.$column.'_foreign');
+        $index = strtolower($this->table . '_' . $column . '_foreign');
 
         return str_replace(array('-', '.'), '_', $index);
     }

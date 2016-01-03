@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Commands;
+namespace Peaches\Generator\Commands;
 
-use Bluecode\Generator\Generators\ModelGenerator;
+use Peaches\Generator\Generators\ModelGenerator;
 
 class ModelMakeCommand extends GeneratorCommand
 {
@@ -55,7 +55,7 @@ class ModelMakeCommand extends GeneratorCommand
 
         // TODO: compare the length option
 
-        $this->comment('Generating models for: '. implode(',', $this->tables));
+        $this->comment('Generating models for: ' . implode(',', $this->tables));
 
         $configData = $this->getConfigData();
 
@@ -70,9 +70,9 @@ class ModelMakeCommand extends GeneratorCommand
 
             $data = array_merge([
                 'TABLE_NAME' => $tableName,
-                'MODEL_NAME' => $modelName
+                'MODEL_NAME' => $modelName,
             ], $configData);
-            
+
             $modelGenerator->generate($data);
         }
     }

@@ -1,10 +1,10 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Commands;
+namespace Peaches\Generator\Commands;
 
 use File;
 use Illuminate\Console\Command;
-use Bluecode\Generator\Generators\RepositoryGenerator;
+use Peaches\Generator\Generators\RepositoryGenerator;
 
 class PublishCommand extends Command
 {
@@ -47,7 +47,7 @@ class PublishCommand extends Command
      */
     public function publishTemplates()
     {
-        $templatesPath = __DIR__.'/../../templates';
+        $templatesPath = __DIR__ . '/../../templates';
 
         $templatesCopyPath = base_path('resources/generator-templates');
 
@@ -59,7 +59,7 @@ class PublishCommand extends Command
      */
     public function publishCommonViews()
     {
-        $viewsPath = __DIR__.'/../../views/common';
+        $viewsPath = __DIR__ . '/../../views/common';
 
         $viewsCopyPath = base_path('resources/views/common');
 
@@ -75,7 +75,7 @@ class PublishCommand extends Command
     public function publishFile($sourceFile, $destinationFile, $fileName)
     {
         if (file_exists($destinationFile)) {
-            $answer = $this->ask('Do you want to overwrite '.$fileName.'? (y|N) :', false);
+            $answer = $this->ask('Do you want to overwrite ' . $fileName . '? (y|N) :', false);
 
             if (strtolower($answer) != 'y' and strtolower($answer) != 'yes') {
                 return;
@@ -84,14 +84,14 @@ class PublishCommand extends Command
 
         copy($sourceFile, $destinationFile);
 
-        $this->comment($fileName.' generated');
+        $this->comment($fileName . ' generated');
         $this->info($destinationFile);
     }
 
     public function publishDirectory($sourceDir, $destinationDir, $dirName)
     {
         if (file_exists($destinationDir)) {
-            $answer = $this->ask('Do you want to overwrite '.$dirName.'? (y|N) :', false);
+            $answer = $this->ask('Do you want to overwrite ' . $dirName . '? (y|N) :', false);
 
             if (strtolower($answer) != 'y' and strtolower($answer) != 'yes') {
                 return;
@@ -102,7 +102,7 @@ class PublishCommand extends Command
 
         File::copyDirectory($sourceDir, $destinationDir);
 
-        $this->comment($dirName.' published');
+        $this->comment($dirName . ' published');
         $this->info($destinationDir);
     }
 }

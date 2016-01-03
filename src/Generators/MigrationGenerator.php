@@ -1,11 +1,11 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Generators;
+namespace Peaches\Generator\Generators;
 
-use Bluecode\Generator\Syntax\AddToTable;
-use Bluecode\Generator\Parser\SchemaParser;
-use Bluecode\Generator\Syntax\AddForeignKeysToTable;
-use Bluecode\Generator\Syntax\RemoveForeignKeysFromTable;
+use Peaches\Generator\Parser\SchemaParser;
+use Peaches\Generator\Syntax\AddForeignKeysToTable;
+use Peaches\Generator\Syntax\AddToTable;
+use Peaches\Generator\Syntax\RemoveForeignKeysFromTable;
 
 class MigrationGenerator extends BaseGenerator implements GeneratorInterface
 {
@@ -76,18 +76,18 @@ class MigrationGenerator extends BaseGenerator implements GeneratorInterface
         $this->method = $method;
         foreach ($tables as $table) {
             $migrationName = $prefix . '_' . $table . '_table';
-            
+
             $fields = $this->schemaParser->{$function}($table);
 
             if (empty($fields)) {
                 continue;
             }
 
-            $filename = $this->datePrefix . '_' . $migrationName.'.php';
+            $filename = $this->datePrefix . '_' . $migrationName . '.php';
 
             $templateData = $this->getTemplateData($fields, [
-                'CLASS'  => ucwords(camel_case($migrationName)),
-                'TABLE'  => $table,
+                'CLASS' => ucwords(camel_case($migrationName)),
+                'TABLE' => $table,
                 'METHOD' => $method,
             ]);
 
@@ -111,8 +111,8 @@ class MigrationGenerator extends BaseGenerator implements GeneratorInterface
         }
 
         return array_merge($data, [
-            'UP'         => $up,
-            'DOWN'       => $down
+            'UP' => $up,
+            'DOWN' => $down,
         ]);
     }
 }

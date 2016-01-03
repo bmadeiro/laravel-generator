@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Parser;
+namespace Peaches\Generator\Parser;
 
 class FieldParser
 {
@@ -10,12 +10,12 @@ class FieldParser
      * @var array
      */
     protected $fieldTypeMap = [
-        'tinyint'  => 'tinyInteger',
+        'tinyint' => 'tinyInteger',
         'smallint' => 'smallInteger',
-        'mediumint'=> 'mediumInteger',
-        'bigint'   => 'bigInteger',
+        'mediumint' => 'mediumInteger',
+        'bigint' => 'bigInteger',
         'datetime' => 'dateTime',
-        'blob'     => 'binary',
+        'blob' => 'binary',
     ];
 
     /**
@@ -58,7 +58,7 @@ class FieldParser
                 ->where('table_schema', $this->database)
                 ->where('table_name', $table)
                 ->where('data_type', 'enum')
-                ->get(['column_name','column_type']);
+                ->get(['column_name', 'column_type']);
             if ($result) {
                 return $result;
             } else {
@@ -115,7 +115,7 @@ class FieldParser
                     } else {
                         $type = str_replace('Integer', 'Increments', $type);
                     }
-                    
+
                     $index = null;
                 } else {
                     if ($column->getUnsigned()) {
@@ -227,7 +227,7 @@ class FieldParser
     protected function argsToString($args, $quotes = '\'')
     {
         if (is_array($args)) {
-            $seperator = $quotes .', '. $quotes;
+            $seperator = $quotes . ', ' . $quotes;
             $args = implode($seperator, $args);
         }
 
@@ -243,7 +243,7 @@ class FieldParser
      */
     protected function decorate($function, $args, $quotes = '\'')
     {
-        if (! is_null($args)) {
+        if (!is_null($args)) {
             $args = $this->argsToString($args, $quotes);
             return $function . '(' . $args . ')';
         } else {

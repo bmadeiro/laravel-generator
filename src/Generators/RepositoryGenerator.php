@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Generators;
+namespace Peaches\Generator\Generators;
 
 class RepositoryGenerator extends BaseGenerator implements GeneratorInterface
 {
@@ -26,7 +26,7 @@ class RepositoryGenerator extends BaseGenerator implements GeneratorInterface
 
     public function generate($data = [])
     {
-        $filename = $data['MODEL_NAME'].'Repository.php';
+        $filename = $data['MODEL_NAME'] . 'Repository.php';
 
         $this->generateFile($filename, $data);
     }
@@ -34,10 +34,10 @@ class RepositoryGenerator extends BaseGenerator implements GeneratorInterface
     public function generateBaseRepository()
     {
         $filename = 'Repository.php';
-        $destPath = $this->rootPath.$filename;
+        $destPath = $this->rootPath . $filename;
 
         if (file_exists($destPath)) {
-            $answer = $this->command->ask('Do you want to overwrite '.$filename.'? (y|N) :', false);
+            $answer = $this->command->ask('Do you want to overwrite ' . $filename . '? (y|N) :', false);
 
             if (strtolower($answer) != 'y' and strtolower($answer) != 'yes') {
                 return;
@@ -45,7 +45,7 @@ class RepositoryGenerator extends BaseGenerator implements GeneratorInterface
         }
 
         $templateData = [
-            'NAMESPACE_REPOSITORY' => config('generator.namespace_repository')
+            'NAMESPACE_REPOSITORY' => config('generator.namespace_repository'),
         ];
 
         $this->generateFile($filename, $templateData, 'base/repository');
@@ -54,7 +54,7 @@ class RepositoryGenerator extends BaseGenerator implements GeneratorInterface
     public function askMakeBaseRepository()
     {
         $filename = 'Repository.php';
-        $destPath = $this->rootPath.$filename;
+        $destPath = $this->rootPath . $filename;
 
         if (file_exists($destPath)) {
             return;

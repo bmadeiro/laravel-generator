@@ -1,10 +1,9 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Commands;
+namespace Peaches\Generator\Commands;
 
 use DB;
 use Illuminate\Console\Command;
-use Bluecode\Generator\CommandData;
 
 abstract class GeneratorCommand extends Command
 {
@@ -95,7 +94,7 @@ abstract class GeneratorCommand extends Command
 
         return $excludes;
     }
-    
+
     /**
      * get config data from config/generator.php
      *
@@ -120,25 +119,27 @@ abstract class GeneratorCommand extends Command
         }
 
         return [
-            'BASE_CONTROLLER'        => config('generator.base_controller', 'App\Http\Controllers\Controller'),
+            'BASE_CONTROLLER' => config('generator.base_controller', 'App\Base\Controller'),
 
-            'NAMESPACE_MODEL'        => config('generator.namespace_model', 'App\Models'),
+            'BASE_NAME' => config('generator.base_name', 'App\Base'),
+
+            'NAMESPACE_MODEL' => config('generator.namespace_model', 'App\Models'),
 
             'NAMESPACE_MODEL_EXTEND' => config('generator.model_extend_class', 'Illuminate\Database\Eloquent\Model'),
 
-            'NAMESPACE_CONTROLLER'   => config('generator.namespace_controller', 'App\Http\Controllers'),
+            'NAMESPACE_CONTROLLER' => config('generator.namespace_controller', 'App\Controllers'),
 
-            'NAMESPACE_REQUEST'      => config('generator.namespace_request', 'App\Http\Requests'),
+            'NAMESPACE_REQUEST' => config('generator.namespace_request', 'App\Requests'),
 
-            'NAMESPACE_REPOSITORY'   => config('generator.namespace_repository', 'App\Repositories'),
+            'NAMESPACE_REPOSITORY' => config('generator.namespace_repository', 'App\Repositories'),
 
-            'NAMESPACE_SERVICE'      => config('generator.namespace_service', 'App\Services'),
+            'NAMESPACE_SERVICE' => config('generator.namespace_service', 'App\Services'),
 
-            'MAIN_LAYOUT'            => config('generator.main_layout', 'app'),
+            'MAIN_LAYOUT' => config('generator.main_layout', 'layout.app'),
 
-            'VIEW_PATH'              => $viewPath,
+            'VIEW_PATH' => $viewPath,
 
-            'ROUTE_PREFIX'           => $routePrefix,
+            'ROUTE_PREFIX' => $routePrefix,
         ];
     }
 }

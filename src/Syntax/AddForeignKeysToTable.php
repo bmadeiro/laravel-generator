@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Syntax;
+namespace Peaches\Generator\Syntax;
 
 /**
  * Class AddForeignKeysToTable
@@ -17,8 +17,8 @@ class AddForeignKeysToTable extends Table
     protected function getItem($foreignKey)
     {
         $value = $foreignKey['field'];
-        if (! empty($foreignKey['name'])) {
-            $value .= "', '". $foreignKey['name'];
+        if (!empty($foreignKey['name'])) {
+            $value .= "', '" . $foreignKey['name'];
         }
         $output = sprintf(
             "\$table->foreign('%s')->references('%s')->on('%s')",

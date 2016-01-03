@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Parser;
+namespace Peaches\Generator\Parser;
 
 use DB;
 
@@ -83,7 +83,7 @@ class SchemaParser
                 'smallIncrements',
                 'mediumIncrements',
                 'increments',
-                'bigIncrements'
+                'bigIncrements',
             ])) {
                 continue;
             }

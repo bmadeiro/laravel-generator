@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Parser;
+namespace Peaches\Generator\Parser;
 
 class ForeignKeyParser
 {
@@ -73,7 +73,7 @@ class ForeignKeyParser
      */
     protected function createIndexName($column)
     {
-        $index = strtolower($this->table.'_'.$column.'_foreign');
+        $index = strtolower($this->table . '_' . $column . '_foreign');
 
         return str_replace(array('-', '.'), '_', $index);
     }

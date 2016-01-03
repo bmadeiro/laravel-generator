@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Commands;
+namespace Peaches\Generator\Commands;
 
-use Bluecode\Generator\Generators\FactoryGenerator;
+use Peaches\Generator\Generators\FactoryGenerator;
 
 class FactoryMakeCommand extends GeneratorCommand
 {
@@ -48,7 +48,7 @@ class FactoryMakeCommand extends GeneratorCommand
     {
         parent::handle();
 
-        $this->comment("\nGenerating factory for : ". implode(',', $this->tables));
+        $this->comment("\nGenerating factory for : " . implode(',', $this->tables));
 
         if ($this->option('models')) {
             $this->models = explode(',', $this->option('models'));
@@ -67,9 +67,9 @@ class FactoryMakeCommand extends GeneratorCommand
 
             $data = array_merge([
                 'TABLE_NAME' => $tableName,
-                'MODEL_NAME' => $modelName
+                'MODEL_NAME' => $modelName,
             ], $configData);
-            
+
             $factoryGenerator->generate($data);
         }
     }

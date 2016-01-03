@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator;
+namespace Peaches\Generator;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class GeneratorServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $configPath = __DIR__.'/../config/generator.php';
+        $configPath = __DIR__ . '/../config/generator.php';
 
         $this->publishes([
             $configPath => config_path('generator.php'),
@@ -28,12 +28,12 @@ class GeneratorServiceProvider extends ServiceProvider
     public function register()
     {
         $this->commands(
-            'Bluecode\Generator\Commands\PublishCommand',
-            'Bluecode\Generator\Commands\MigrationMakeCommand',
-            'Bluecode\Generator\Commands\ModelMakeCommand',
-            'Bluecode\Generator\Commands\ScaffoldMakeCommand',
-            'Bluecode\Generator\Commands\FactoryMakeCommand',
-            'Bluecode\Generator\Commands\ResourceMakeCommand'
+            'Peaches\Generator\Commands\PublishCommand',
+            'Peaches\Generator\Commands\MigrationMakeCommand',
+            'Peaches\Generator\Commands\ModelMakeCommand',
+            'Peaches\Generator\Commands\ScaffoldMakeCommand',
+            'Peaches\Generator\Commands\FactoryMakeCommand',
+            'Peaches\Generator\Commands\ResourceMakeCommand'
         );
     }
 }

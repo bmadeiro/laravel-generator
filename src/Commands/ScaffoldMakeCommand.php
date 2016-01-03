@@ -1,15 +1,14 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Commands;
+namespace Peaches\Generator\Commands;
 
-use Bluecode\Generator\Generators\ViewGenerator;
-use Bluecode\Generator\Generators\ModelGenerator;
-use Bluecode\Generator\Generators\RoutesGenerator;
-use Bluecode\Generator\Generators\ServiceGenerator;
-use Bluecode\Generator\Generators\RequestGenerator;
-use Bluecode\Generator\Generators\MigrationGenerator;
-use Bluecode\Generator\Generators\RepositoryGenerator;
-use Bluecode\Generator\Generators\ControllerGenerator;
+use Peaches\Generator\Generators\ControllerGenerator;
+use Peaches\Generator\Generators\ModelGenerator;
+use Peaches\Generator\Generators\RepositoryGenerator;
+use Peaches\Generator\Generators\RequestGenerator;
+use Peaches\Generator\Generators\RoutesGenerator;
+use Peaches\Generator\Generators\ServiceGenerator;
+use Peaches\Generator\Generators\ViewGenerator;
 
 class ScaffoldMakeCommand extends GeneratorCommand
 {
@@ -47,7 +46,6 @@ class ScaffoldMakeCommand extends GeneratorCommand
     {
         return 'scaffold';
     }
-    
 
     /**
      * Execute the command.
@@ -79,10 +77,10 @@ class ScaffoldMakeCommand extends GeneratorCommand
             $messages = $configMessages['en'];
         }
         $configData = array_merge([
-            'MESSAGE_STORE'     => "'".str_replace(':model', '$MODEL_NAME$', $messages['store'])."'",
-            'MESSAGE_UPDATE'    => "'".str_replace(':model', '$MODEL_NAME$', $messages['update'])."'",
-            'MESSAGE_DELETE'    => "'".str_replace(':model', '$MODEL_NAME$', $messages['delete'])."'",
-            'MESSAGE_NOT_FOUND' => "'".str_replace(':model', '$MODEL_NAME$', $messages['not_found'])."'",
+            'MESSAGE_STORE' => "'" . str_replace(':model', '$MODEL_NAME$', $messages['store']) . "'",
+            'MESSAGE_UPDATE' => "'" . str_replace(':model', '$MODEL_NAME$', $messages['update']) . "'",
+            'MESSAGE_DELETE' => "'" . str_replace(':model', '$MODEL_NAME$', $messages['delete']) . "'",
+            'MESSAGE_NOT_FOUND' => "'" . str_replace(':model', '$MODEL_NAME$', $messages['not_found']) . "'",
         ], $configData);
 
         // init generators
@@ -112,7 +110,7 @@ class ScaffoldMakeCommand extends GeneratorCommand
                 $modelName = str_singular(studly_case($tableName));
             }
 
-            $this->comment('Generating scaffold for: '. $tableName);
+            $this->comment('Generating scaffold for: ' . $tableName);
 
             $data = array_merge($configData, [
                 'TABLE_NAME' => $tableName,
@@ -121,7 +119,7 @@ class ScaffoldMakeCommand extends GeneratorCommand
                 'MODEL_NAME_PLURAL' => str_plural($modelName),
                 'MODEL_NAME_PLURAL_CAMEL' => camel_case(str_plural($modelName)),
                 'RESOURCE_URL' => str_slug($tableName),
-                'VIEW_FOLDER_NAME' => snake_case($tableName)
+                'VIEW_FOLDER_NAME' => snake_case($tableName),
             ]);
 
             // update route
@@ -145,7 +143,7 @@ class ScaffoldMakeCommand extends GeneratorCommand
 
             // create a controller
             $controllerGenerator->generate($data);
-        
+
             // create a view folder
             $viewGenerator->fillableColumns = $modelGenerator->fillableColumns;
             $viewGenerator->generate($data);

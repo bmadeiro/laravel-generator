@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Bluecode\Generator\Generators;
+namespace Peaches\Generator\Generators;
 
 class ControllerGenerator extends BaseGenerator implements GeneratorInterface
 {
@@ -31,18 +31,18 @@ class ControllerGenerator extends BaseGenerator implements GeneratorInterface
         } else {
             $templateFilename = 'Controller';
         }
-        return 'scaffold/'.$templateFilename;
+        return 'scaffold/' . $templateFilename;
     }
 
     public function generate($data = [])
     {
         if ($this->command->option('paginate')) {
-            $data['RENDER_TYPE'] = 'paginate('.$this->command->option('paginate').')';
+            $data['RENDER_TYPE'] = 'paginate(' . $this->command->option('paginate') . ')';
         } else {
             $data['RENDER_TYPE'] = 'all()';
         }
 
-        $filename = $data['MODEL_NAME'].'Controller.php';
+        $filename = $data['MODEL_NAME'] . 'Controller.php';
         $this->generateFile($filename, $data);
     }
 }
