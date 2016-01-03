@@ -46,7 +46,7 @@ Documentation
         }
 
         "require-dev": {
-            "peaches/laravel-generator": "1.*"
+            "19peaches/laravel-generator": "1.*"
         }
   
 2. Run composer update
