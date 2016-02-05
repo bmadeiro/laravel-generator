@@ -2,7 +2,7 @@
 
 namespace $NAMESPACE_MODEL$;
 
-use $NAMESPACE_MODEL_EXTEND$ as Model;
+use $NAMESPACE_MODEL_EXTEND$;
 $IMPORT_TRAIT$
 class $MODEL_NAME$ extends Model$AUTH_IMPLEMENTS$
 {

@@ -154,11 +154,11 @@ class ModelRelationshipsGenerator
     {
         $foreign = $table->getForeignKeys();
 
-        $fk1 = $foreign[0];
+        $fk1 = array_values($foreign)[0];
         $fk1Table = $fk1->getForeignTableName();
         $fk1Field = current($fk1->getLocalColumns());
 
-        $fk2 = $foreign[1];
+        $fk2 = array_values($foreign)[1];
         $fk2Table = $fk2->getForeignTableName();
         $fk2Field = current($fk2->getLocalColumns());
 
